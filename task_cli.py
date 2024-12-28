@@ -1,7 +1,6 @@
 import sys
 import json
 from datetime import datetime
-from pprint import pprint
 
 ALL = "all"
 TODO = "to do"
@@ -62,7 +61,7 @@ class TaskList:
             raise ValueError("Task is already created")
         self._task_list[self._index] = Task(self._index, description=task)
         self._index += 1
-        self._save()
+        self.save()
         return self._index-1
 
     def delete(self, index: int):
